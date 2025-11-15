@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posting Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content container">
+        <p class="hero__eyebrow">Projeto Trilha 2</p>
+        <h1>Simule seus posts como em uma rede social</h1>
+        <p class="hero__subtitle">
+          Preencha o formulário abaixo e envie o conteúdo para a API pública
+          JSONPlaceholder. O retorno será exibido logo em seguida, simulando o
+          post publicado.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card" aria-labelledby="compose-heading">
+        <div class="card__header">
+          <h2 id="compose-heading">Compose o seu post</h2>
+          <p>Informe um título chamativo e capriche no conteúdo.</p>
+        </div>
+
+        <form id="post-form" class="form" autocomplete="off" novalidate>
+          <div class="form__field">
+            <label for="post-title">Título</label>
+            <input
+              id="post-title"
+              name="title"
+              type="text"
+              placeholder="Ex.: Ideias para o próximo projeto"
+              required
+              minlength="3"
+            />
+          </div>
+
+          <div class="form__field">
+            <label for="post-content">Conteúdo</label>
+            <textarea
+              id="post-content"
+              name="content"
+              rows="6"
+              placeholder="Compartilhe algo interessante com a comunidade..."
+              required
+              minlength="10"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn">Publicar agora</button>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="card" aria-live="polite" aria-labelledby="preview-heading">
+        <div class="card__header">
+          <h2 id="preview-heading">Prévia do post publicado</h2>
+          <p>Veja o retorno da API em tempo real.</p>
+        </div>
+
+        <article class="preview">
+          <h3 id="rendered-title">Seu título aparecerá aqui</h3>
+          <p id="rendered-content">
+            O conteúdo retornado pela API será exibido neste espaço. Faça um
+            post para começar.
+          </p>
+          <small id="rendered-id" class="preview__meta"></small>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Desenvolvido na Trilha 2 • API: JSONPlaceholder (https://jsonplaceholder.typicode.com/posts)
+        </p>
+      </div>
+    </footer>
+
+    <script src="./main.js" defer></script>
+  </body>
+</html>
